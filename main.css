@@ -1,0 +1,276 @@
+.container{
+    margin: 20px auto;
+    width: 1000px;
+}
+
+.game-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.category span{
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+}
+
+.hangman{
+display: flex;
+}
+
+.hangman-draw{
+    flex: 1;
+    background-color: #F8F8F8;
+    padding: 20px;
+    height: 324px;
+}
+
+.hangman-draw.wrong-1 .draw{
+
+    display: block;
+}
+.hangman-draw.wrong-2 .stand{
+
+    display: block;
+}
+.hangman-draw.wrong-3 .hang{
+
+    display: block;
+}
+.hangman-draw.wrong-4 .head{
+
+    display: block;
+}
+.hangman-draw.wrong-5 .body{
+
+    display: block;
+}
+.hangman-draw.wrong-6 .hands{
+
+    display: block;
+}
+.hangman-draw.wrong-7 .foot{
+
+    display: block;
+}
+
+.hangman .letters{
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    perspective: 5000;
+}
+.hangman .letters.finish{
+
+    pointer-events: none;
+}
+
+.hangman span{
+    background-color: #326332;
+    width: 55px;
+    height: 55px;
+    margin: 5px;
+    line-height: 55px;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    transition: .5s;
+    transform-style: preserve-3d;
+
+}
+
+.hangman span.clicked{
+    pointer-events: none;
+    background-color: #222;
+    opacity: .3;
+}
+
+.hangman span:active{
+    transform: scale(1.5);
+}
+.draw{
+    width: 60px;
+    height: 280px;
+    border-bottom: 8px solid #222;
+    position: relative;
+    margin: auto;
+    left: -60px;
+    display: none;
+}
+
+.stand{
+    position: absolute;
+    width: 4px;
+    background-color: #222;
+    height: 100%;
+    left: 50%;
+    margin-left: -2px;
+    display: none;
+}
+.hang{
+    display: none;
+}
+.hang::before{
+    content: '';
+    position: absolute;
+    height: 4px;
+    background-color: #222;
+    width: 100px;
+    left: 30px;
+    top: 15px;
+}
+
+.hang::after{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 30px;
+    background-color: #222;
+    left: 130px;
+    top: 15px;
+
+    
+}
+
+.rope{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    left: 95px;
+    top: 45px;
+    border: 4px dashed #222;
+    
+}
+
+.head{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid #222;
+    position: absolute;
+    left: 105px;
+    top: 55px;
+    display: none;
+}
+
+.body{
+    position: absolute;
+    background-color: #222;
+    width: 4px;
+    height: 110px;
+    top: 102px;
+    left: 130px;
+    display: none;
+}
+
+.hands{
+    display: none;
+}
+
+.hands::before,
+.hands::after{
+    content: '';
+    width: 50px;
+    position: absolute;
+    height: 4px;
+    background-color: #222;
+    top: 140px;
+}
+
+.hands::before{
+    left: 85px;
+    transform: rotate(30deg);
+}
+.hands::after{
+    left: 130px;
+    transform: rotate(-30deg);
+}
+
+.foot{
+    display: none;
+}
+
+.foot::before,
+.foot::after{
+    content: '';
+    width: 50px;
+    position: absolute;
+    height: 4px;
+    background-color: #222;
+    top: 220px;
+}
+
+.foot::before{
+    left: 85px;
+    transform: rotate(-30deg);
+}
+.foot::after{
+    left: 130px;
+    transform: rotate(30deg);
+}
+
+.lettersGuess {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    min-height: 104px;
+}
+
+.lettersGuess span{
+text-transform: uppercase;
+background-color: #d8d3d35b;
+width: 60px;
+height: 60px;
+line-height: 60px;
+padding: 16px;
+margin-right: 15px;
+font-size: 24px;
+font-weight: bold;
+text-align: center;
+border-bottom: 3px solid black;
+}
+
+.lettersGuess span.with-space{
+background: none;
+border-bottom: none;
+position: relative;
+
+}
+.lettersGuess span.with-space::after{
+content: '';    
+width: 20px;
+height: 4px;
+background-color: #222;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+}
+
+.endGameDiv{
+    position: fixed;
+    height: 30%;
+    width: 60%;
+    background-color: #326332;
+    color: white;
+    font-size: 30px;
+    padding: 60px;
+    text-align: center;
+    margin: auto;
+    word-spacing: 6px;
+    line-height: 2;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+}
+.endGameSpan{
+    display: block;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 20px;
+}
